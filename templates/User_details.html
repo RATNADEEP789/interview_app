@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Candidate-details</title>
+
+    <link rel="stylesheet" href="static/css/User_details.css">
+
+    
+</head>
+<body>
+
+<!-- navbar starts -->
+    <header class="header">
+        <nav class="navbar">
+           
+            <a href="#" class="nav-logo"><img src="static/img/Kavin Logo.png" width="180px" alt=""></a>
+            <ul class="nav-menu">
+                <!-- <li class="nav-item">
+                    <a style="color: #C1FF11;" href="homepage1" class="nav-link">Home</a>
+                </li> -->
+                <!-- <li class="nav-item">
+                    <a style="color: #C1FF11;" href="login2" class="nav-link">Admin</a>
+                </li> -->
+                <li class="nav-item">
+                    <a style="color: #C1FF11;" href="logout" class="nav-link">Logout</a>
+                </li>
+                <!-- <li class="nav-item">
+                    <a href="#" class="nav-link"><img src="static/img/Mask group.png" width="20px" alt=""></a>
+                 </li> -->
+                <!-- <li class="nav-item">
+                    <a href="#" class="nav-link">Contact</a>
+                </li>  -->
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+</header>
+
+<!-- navbar ends here -->
+
+<!-- ******************************************************************************* -->
+<!-- instruction starts here -->
+
+<section>
+    <div class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <div class="dis">
+               <h1>Instructions</h1>
+               <li> Questions are multiple choice question.</li>
+               <li> One choice is correct. </li>
+                <li>Two attempts are allowed per user question carries equal marks i.e., 1 mark for each question.</li> 
+                <li>Question is displayed only once per user.</li>
+                <li>Give answer as quickly as you can.</li>
+                <li>You press refresh or go back to the previous page, <br>
+                   there will be a new question for you and the question you were on will be counted as attempted.
+                <li>Questions are displayed randomly for every user.</li>
+            </div>
+        </div>
+    </div>
+</section>
+         
+<!-- instruction ends here  -->
+
+<!-- ******************************************************************************** -->
+
+<!-- cards start here -->
+ <section>
+      
+    <div class="name"><p>Hello {{userdetails.full_name}}</p></div>
+        <div class="firsText">
+        <h1>Welcome to Kavintech Corporation Assessment</h1>
+        
+        </div>
+    </section>
+   
+    <section>
+        <div class="candidate">Candidate Details:</div>
+
+        <div class="card_container">
+            
+            <div class="card subCard1">
+            <p>Name: </p>
+            <!-- <p>{{userdetails.Username}}</p> -->
+            <p id="name">{{userdetails.Username}}</p>
+            </div>
+            <div class="card subCard2">
+            <p>Position:</p>
+            <!-- <p> {{userdetails.possition}}</p> -->
+            <p id="position">{{userdetails.possition}}</p>
+            </div>
+
+            <div class="card subCard3">
+                <p>Experience: </p>
+                <!-- <p>{{userdetails.Expereince}}</p> -->
+                <p id="expereince">{{userdetails.Expereince}}</p>
+            </div>
+           
+
+        </div>
+    </section>
+    <!-- {% for r in res %} -->
+         <!-- <p style="color: black;">Name:{{userdetails.Username}}</p>
+         <p style="color: black;">Experience:{{userdetails.Expereince}}</p>
+         <p style="color: black;">position:{{userdetails.possition}}</p> -->
+    <!-- {% endfor %} -->
+
+ 
+<!-- cards ends here -->
+
+    <!-- ****************************************************************** -->
+<!-- footer starts here -->
+    <section>
+        {% if userdetails.attempts == 0 %}
+            <div class="buttonS">
+                <a href="instruction">Start Test</a>
+            </div>
+        {% else %}
+            <div class="buttonS">
+                <a href="instruction" style="background-color: grey; pointer-events: none;" disabled>Start Test</a>
+            </div>
+        {% endif %}
+    </section>
+    <section>
+        <div class="footer">
+            <p>Please go through the <span class="trigger">instructions</span> before you take the test!</p>
+        </div>
+    </section>
+    <section>
+        <!-- <div class="button"><a >sign up</a></div> -->
+
+    </section>
+   
+<!-- footer starts here -->
+
+</body>
+
+<script>
+    addEventListener("load", (event) => {
+
+    });
+</script>
+
+<script>
+    const hamburger = document.querySelector(".hamburger");
+    const navMenu = document.querySelector(".nav-menu");
+
+    hamburger.addEventListener("click", mobileMenu);
+
+    function mobileMenu() {
+        hamburger.classList.toggle("active");
+        navMenu.classList.toggle("active");
+    }
+
+    const navLink = document.querySelectorAll(".nav-link");
+
+    navLink.forEach(n => n.addEventListener("click", closeMenu));
+
+    function closeMenu() {
+        hamburger.classList.remove("active");
+        navMenu.classList.remove("active");
+    }
+</script>
+
+<script>
+    const modal = document.querySelector(".modal");
+    const trigger = document.querySelector(".trigger");
+    const closeButton = document.querySelector(".close-button");
+
+    function toggleModal() {
+        modal.classList.toggle("show-modal");
+    }
+
+    function windowOnClick(event) {
+        if (event.target === modal) {
+            toggleModal();
+        }
+    }
+
+    trigger.addEventListener("click", toggleModal);
+    closeButton.addEventListener("click", toggleModal);
+    window.addEventListener("click", windowOnClick);
+
+</script>
+</html>

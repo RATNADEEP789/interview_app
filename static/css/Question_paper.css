@@ -1,0 +1,262 @@
+ @import url('https://fonts.googleapis.com/css2?family=Inter:wght@700&family=Public+Sans&display=swap');
+ * {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+ }
+ 
+ html {
+     /* position: relative; */
+     background-color: black;
+     font-family: 'Public Sans', sans-serif;
+ }
+ 
+ .mySlides {
+     /* display: none; */
+     width: 400px;
+ }
+ 
+ .block2 {
+     width: 400px;
+ }
+ 
+ .block2 label {
+     width: 300px;
+     display: flex;
+     align-items: center;
+     /*  */
+     /* justify-content: space-between; */
+     column-gap: 10px;
+     /* position: relative; */
+     background-color: white;
+     margin-bottom: 10px;
+     padding: 4px;
+     border-radius: 5px;
+     border: 1px solid white;
+     border-color: rgb(231, 230, 230);
+     font-family: 'Public Sans', sans-serif;
+     font-size: 1rem;
+     font-weight: 400;
+     /* border-width: 5px; */
+     margin-left: 22px;
+ }
+ 
+ #age {
+     background-color: white !important;
+     border: 2px solid black;
+ }
+ 
+ .first_page input {
+     padding: 4px;
+ }
+ 
+ .last {
+     position: absolute;
+     bottom: 0;
+     right: 50px;
+     bottom: 80px;
+ }
+ 
+ .sliders {
+     /* display: flex;
+    justify-content: end;
+    margin-right: 50px; */
+     column-gap: 10px;
+     /* right: 70px; */
+     /* margin-top: 70px; */
+     /* position: fixed; */
+     /* margin-top:70px; */
+     /* margin-top: 40px; */
+     /* position: absolute;
+    right: 100px; */
+ }
+ 
+ .sliders button {
+     width: 40px;
+     padding: 8px;
+     background-color: white;
+     border: none;
+ }
+ 
+ .mySlides {
+     width: 400px;
+     /* height: 250px; */
+     /* display: flex;
+    flex-direction: column; */
+     /* position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%); */
+ }
+ 
+ .mySlides h1 {
+     color: white;
+     font-size: 1.5rem;
+     margin-bottom: 10px;
+ }
+ 
+ .w3-button {
+     width: 70px;
+     padding: 5px;
+     margin-top: 10px;
+     background-color: #C1FF11;
+     border-radius: 5px;
+     border: none;
+ }
+ 
+ .container {
+     position: relative;
+ }
+ 
+ .center {
+     width: 100%;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     margin-top: 50px;
+     /* margin-bottom: 50px; */
+ }
+ 
+ .mySlides h1 {
+     font-size: 1.2rem;
+     margin-top: 60px;
+     display: flex;
+ }
+ .mySlides h1 span {
+    margin-right: 8px;
+}
+ 
+ .submit_btn button {
+    margin-top: 20px;
+    padding: 14px 30px;
+    text-align: center;
+    background-color: #C1FF11;
+    border: none;
+    /* width: 100px; */
+    margin-bottom: 30px;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: bold;
+ }
+ /* .sliders{
+    margin-top: ;
+} */
+ 
+ .activelbl {
+     background-color: #525252 !important;
+     color: rgb(255, 255, 255);
+ }
+ 
+ .container {
+     display: flex;
+     /* justify-content: space-between; */
+     position: relative;
+     padding-left: 35px;
+     margin-bottom: 12px;
+     cursor: pointer;
+     font-size: 22px;
+     -webkit-user-select: none;
+     -moz-user-select: none;
+     -ms-user-select: none;
+     user-select: none;
+ }
+ /* Hide the browser's default checkbox */
+ 
+ .container input {
+     position: absolute;
+     opacity: 0;
+     cursor: pointer;
+     height: 0;
+     width: 0;
+ }
+ /* Create a custom checkbox */
+ 
+ .checkmark {
+     position: absolute;
+     /* top: 0; */
+     right: 3px;
+     height: 25px;
+     width: 25px;
+     background-color: transparent;
+     margin-left: 20px;
+     margin-left: 20px;
+ }
+ /* On mouse-over, add a grey background color */
+ /* When the checkbox is checked, add a blue background */
+ 
+ .container input:checked~.checkmark {
+     background-color: #393b3d;
+     border: 1px solid;
+     margin-left: 10px;
+     border-radius: 5px;
+ }
+ /* Create the checkmark/indicator (hidden when not checked) */
+ 
+ .checkmark:after {
+     content: "";
+     position: absolute;
+     display: none;
+ }
+ /* Show the checkmark when checked */
+ 
+ .container input:checked~.checkmark:after {
+     display: block;
+ }
+ /* Style the checkmark/indicator */
+ 
+ .container .checkmark:after {
+     left: 9px;
+     top: 5px;
+     width: 5px;
+     height: 10px;
+     border: solid white;
+     border-width: 0 3px 3px 0;
+     -webkit-transform: rotate(45deg);
+     -ms-transform: rotate(45deg);
+     transform: rotate(45deg);
+ }
+ 
+ @media (max-width:786px) {
+     .center {
+         width: 80%;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         margin-top: 150px;
+         margin-left: 30px;
+         margin-right: 30px;
+         margin-bottom: 30px;
+     }
+ }
+ 
+ @media (max-width:375px) {
+     .center {
+         width: 80%;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         margin-top: 150px;
+         /* margin-left: 40px;
+    margin-right: 50px; */
+         /* padding-right: 20px; */
+         margin-left: 35px;
+     }
+     .block label {
+         width: 310px;
+     }
+     .sliders {
+         /* margin-top: 40px; */
+         /* margin-right:0px; */
+         right: 0px;
+     }
+     .block1 label {
+         width: 200px;
+     }
+     .block label {
+         width: 300px;
+     }
+ }
+
+ .center .block2 label img {
+    height: 100%;
+}

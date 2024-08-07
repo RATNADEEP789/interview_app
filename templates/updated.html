@@ -1,0 +1,29 @@
+<form action='/updaterecord/{{mystudent.fld_slno}}' method='POST'>
+    {% csrf_token %}
+   
+    Experience:<br>
+    <input name='experience' value='{{ mystudent.fld_total_exp_name }}' required>
+    <br><br>
+    Position:<br>
+    <input name='position' value='{{ mystudent.fld_post_applied_for_name }}' required>
+    <br><br>
+    Question:<br>
+    <input name='question' value='{{ mystudent.fld_question_text }}' required>
+    <br><br>
+    Option 1:<br>
+    <input name="option1" value="{{ options.0 }}" required>
+    <br><br>
+    Option 2:<br>
+    <input name="option2" value="{{ options.1 }}" required>
+    <br><br>
+    Option 3:<br>
+    <input name="option3" value="{{ options.2 }}" required>
+    <br><br>
+    Option 4:<br>
+    <input name="option4" value="{{ options.3 }}" required>
+    <br><br>
+    Correct options:<br>
+    <input name='correct_option' value='{{ mystudent.fld_correct_option_name }}' required>
+    <br><br>
+    <button class="button button2 submit-btn">Submit</button>
+</form>

@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="static/css/registration.css">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script><!-- SweetAlert library -->
+
+
+</head>
+<body>
+    <section>
+        <!-- Your code for the modal -->
+    </section>
+    <div class="register">
+        <form class="reg-form" action="{% url 'register1' %}" name="form" id="register" method="POST" enctype="multipart/form-data">
+
+            {% csrf_token %}
+
+            <div>
+                <span class="close-button"><a href="homepage1">&times;</a></span>
+            </div>
+
+            <br><br>
+
+            <div class="image">
+                <img src="static/img/Kavin Logo.png" width="260px" alt="">
+            </div>
+
+            <div class="form-header">
+                <p>Sign up and create an account!</p>
+            </div>
+            <!--name field-->
+            <div class="form-group">
+                <input type="text" class="form-input" id="full_name" name="full_name" placeholder="full name*">
+                <span id="name_error"></span>
+            </div>
+
+            <!-- Date _of_birth field -->
+            <div class="form-group">
+                <input type="date" class="form-input" id="date" name="dateofbirth" placeholder='' >
+                <span id="date_error"></span>
+
+            </div>
+            <!-- gender field -->
+            <div class="form-group">
+                <select class="form-input" name="gender" id="gender" class="w-100">
+                    <option value="">gender*</option>
+                    <option value="male">male</option>
+                    <option value="female">female</option>
+                </select>
+                <span id="gender_error"></span>
+            </div>
+            <!-- mobile_number field -->
+            <div class="form-group">
+                <input type="tel" class="form-input" id="mobile_number" name="mobile_number" placeholder="mobile number*">
+                <span id="mob_error"></span>
+            </div>
+            <!-- email field -->
+            <div class="form-group">
+                <input type="email" class="form-input" id="email_id" name="email_id" placeholder="email id *">
+                <span id="email_error"></span>
+            </div>
+            <!--Experience field -->
+            <div class="form-group">
+                <select class="form-input" name="Expereince" id="experiance" class="w-100">
+                    <option value="">experience*</option>
+                    <option value="fresher">fresher</option>
+                    <option value="1 + year">1 + year</option>
+                </select>
+                <span id="exp_error"></span>
+            </div>
+            <!-- position fields -->
+            <div class="form-group">
+                <select class="form-input" name="possition" id="position">
+                     <option value="">position*</option>
+                    <!-- <option value="python">python</option>  -->
+                    <option value="django">python,django,mysql</option>
+                    <option value="wordpress">wordpress</option>
+                    <option value="python">python</option>
+                    
+                </select>
+                <span id="pos_error"></span>
+            </div>
+            <!-- refernce field -->
+            <div class="form-group">
+                <select class="form-input" name="referd_by" id="referd_by">
+                    <option value="">referred by*</option>
+                    <option value="Current Employee">Current Employee</option>
+                    <option value="Old Employee">Old Employee</option>
+                    <option value="consultancy">consultancy</option>
+                    <option value="Others">Others</option>
+                </select>
+                <span id="refer_error"></span>
+            </div>
+            <!-- home_town field -->
+            <div class="form-group">
+                <input type="text" class="form-input" id="home_town" name="home_town" placeholder="hometown*">
+                <span id="home_error"></span>
+            </div>
+            <!-- resume fields -->
+            <div class="form-group">
+             
+                <input type="file" class="form-input" id="resume" name="resume" placeholder="resume*">
+                <span id="resume_error"></span>
+            </div>
+            <!-- username field -->
+            <div class="form-group">
+                <input type="text" class="form-input" name="Username" id="user_name" placeholder="username (preferred)*">
+                <span id="user_error"></span>
+            </div>
+            <!-- password field -->
+            <div class="form-group">
+                <input type="text" class="form-input" id="password" name="password" placeholder="password (preferred)*">
+                <span id="pass_error"></span>
+            </div>
+            <!--Registration Button field-->
+            <div class="form-group">
+                <div class="btnc">
+                    <button class="form-button" type="submit">Sign up</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <script>
+        // Function to validate the form on submission
+        function validateForm() {
+            // Get the form inputs
+            var fullName = document.getElementById('full_name').value;
+            var dateOfBirth = document.getElementById('date').value;
+            var gender = document.getElementById('gender').value;
+            var mobileNumber = document.getElementById('mobile_number').value;
+            var email = document.getElementById('email_id').value;
+            var experience = document.getElementById('experiance').value;
+            var position = document.getElementById('position').value;
+            var referredBy = document.getElementById('referd_by').value;
+            var homeTown = document.getElementById('home_town').value;
+            var resume = document.getElementById('resume').value;
+            var username = document.getElementById('user_name').value;
+            var password = document.getElementById('password').value;
+
+            // Validate full name (not empty)
+            var fullNameRegex = /^[a-zA-Z ]{1,50}$/;
+
+if (fullName.trim() === '') {
+    document.getElementById('name_error').textContent = 'Please enter your full name.';
+    return false;
+} else if (!fullName.match(fullNameRegex)) {
+    document.getElementById('name_error').textContent = 'Full name must contain only letters and spaces, and not exceed 50 characters.';
+    return false;
+} else {
+    document.getElementById('name_error').textContent = '';
+}
+// Validate date of birth (not empty)
+          if (dateOfBirth.trim() === '') {
+    document.getElementById('date_error').textContent = 'Please enter your date of birth.';
+    return false;
+    } else {
+    var currentDate = new Date();
+    var selectedDate = new Date(dateOfBirth);
+
+    // Set the minimum age limit to 18 years
+    var minAgeDate = new Date();
+    minAgeDate.setFullYear(minAgeDate.getFullYear() - 18);
+
+    // Set the maximum date limit to 01/01/1900
+    var maxDate = new Date('1900-01-01');
+
+    if (selectedDate > currentDate) {
+        document.getElementById('date_error').textContent = 'Date of birth cannot be in the future.';
+        return false;
+    } else if (selectedDate > minAgeDate) {
+        document.getElementById('date_error').textContent = 'You must be at least 18 years old.';
+        return false;
+    } else if (selectedDate < maxDate) {
+        document.getElementById('date_error').textContent = 'Invalid date of birth.';
+        return false;
+    } else {
+        document.getElementById('date_error').textContent = '';
+    }
+}
+
+// Validate gender (not empty)
+            if (gender === '') {
+                document.getElementById('gender_error').textContent = 'Please select your gender.';
+                return false;
+            } else {
+                document.getElementById('gender_error').textContent = '';
+            }
+
+
+            // Validate mobile number (starts with 7)
+            if (!/^[7-9]\d{9}$/.test(mobileNumber)) {
+                document.getElementById('mob_error').textContent = 'Mobile number must start with 7, 8, or 9 and should be 10 digits.';
+                return false;
+            } else {
+                document.getElementById('mob_error').textContent = '';
+            }
+
+
+            // Validate email (not empty and valid format)
+            function isValidEmail(email) {
+    // Regular expression for email format validation
+    var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+}
+
+function validateForm() {
+    var email = document.getElementById('email').value;
+    if (email.trim() === '') {
+        document.getElementById('email_error').textContent = 'Please enter your email address.';
+        return false;
+    } else if (!isValidEmail(email)) {
+        document.getElementById('email_error').textContent = 'Please enter a valid email address.';
+        return false;
+    } else {
+        document.getElementById('email_error').textContent = '';
+    }
+    return true;
+}
+
+
+
+            // Validate experience (not empty)
+            if (experience === '') {
+                document.getElementById('exp_error').textContent = 'Please select your experience level.';
+                return false;
+            } else {
+                document.getElementById('exp_error').textContent = '';
+            }
+
+
+            // Validate position (not empty)
+            if (position === '') {
+                document.getElementById('pos_error').textContent = 'Please select your position.';
+                return false;
+            } else {
+                document.getElementById('pos_error').textContent = '';
+            }
+
+
+            // Validate referred by (not empty)
+            if (referredBy === '') {
+                document.getElementById('refer_error').textContent = 'Please select how you were referred.';
+                return false;
+            } else {
+                document.getElementById('refer_error').textContent = '';
+            }
+
+
+            // Validate home town (not empty)
+            if (homeTown.trim() === '') {
+                document.getElementById('home_error').textContent = 'Please enter your hometown.';
+                return false;
+            } else {
+                document.getElementById('home_error').textContent = '';
+            }
+
+
+           
+            function validateForm() {
+    var resumeInput = document.getElementById('resume');
+    var allowedExtensions = /(\.pdf|\.doc|\.docx)$/i; // Allowed extensions: PDF, DOC, DOCX
+
+    if (resumeInput.files.length === 0) {
+        document.getElementById('resume_error').textContent = 'Please upload your resume.';
+        return false;
+    }
+
+    // Get the file extension from the file name
+    var fileName = resumeInput.value;
+    var fileExtension = fileName.split('.').pop();
+
+    // Check if the file extension matches the allowed extensions
+    if (!allowedExtensions.test(fileExtension)) {
+        document.getElementById('resume_error').textContent = 'Please upload a PDF or Word document.';
+        return false;
+    } else {
+        document.getElementById('resume_error').textContent = '';
+        return true;
+    }
+}
+
+
+
+
+            // Validate username (not empty)
+            if (username.trim() === '') {
+                document.getElementById('user_error').textContent = 'Please enter a username.';
+                return false;
+            } else {
+                document.getElementById('user_error').textContent = '';
+            }
+
+
+            // Validate password (not empty)
+            if (password.trim() === '') {
+                document.getElementById('pass_error').textContent = 'Please enter a password.';
+                return false;
+            } else if (password.trim().length < 8) {
+                document.getElementById('pass_error').textContent = 'Password must be at least 8 characters.';
+                return false;
+            } else {
+                document.getElementById('pass_error').textContent = '';
+            }
+
+
+            // If all validations pass, return true to submit the form
+            return true;
+        }
+
+
+        // Function to check the validity of an email address
+        function isValidEmail(email) {
+            var emailRegex = /^[a-zA-Z0-9._%+-]+@gmail\.com$/;
+            return emailRegex.test(email);
+        }
+
+
+ // Attach the form validation function to the form's submit event
+var form = document.getElementById('register');
+form.addEventListener('submit', function(event) {
+  // Prevent form submission if validation fails
+  if (!validateForm()) {
+    event.preventDefault();
+  } else {
+    event.preventDefault();
+
+    var formData = new FormData(form);
+
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', form.action, true);
+    xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+    xhr.onreadystatechange = function() {
+      if (xhr.readyState === XMLHttpRequest.DONE) {
+        if (xhr.status === 200) {
+          res = JSON.parse(xhr.response);
+          if (res.hasOwnProperty("error_msg")) {
+                swal({
+                title: 'Error',
+                text: res['error_msg'],
+                icon: 'error',
+                button: 'OK'
+                });
+            } 
+            else {
+                // Form submission successful, show SweetAlert message
+                var username = document.getElementById('user_name').value;
+                var password = document.getElementById('password').value;
+                swal({
+                title: 'Registration Successful',
+                text: 'Username: ' + username + '\nPassword: ' + password,
+                icon: 'success',
+                button: 'OK',
+                timer: 60000 // Set the timer to 1 minute (60 seconds * 1000 milliseconds)
+                }).then(function() {
+                // Redirect to login2 page
+                window.location.href = 'login2';
+                });
+            }
+        } else {
+          // Form submission failed, handle the error
+          swal({
+            title: 'Error',
+            text: 'Failed to submit the form. Please try again.',
+            icon: 'error',
+            button: 'OK'
+          });
+        }
+      }
+    };
+    // Send the form data
+    xhr.send(formData);
+  }
+});
+ 
+
+    </script>
+</body>   
+</html>

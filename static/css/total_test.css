@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&family=Playfair+Display:wght@600&display=swap');
+
+.table-sec {
+    display: flex;
+    margin-top: 2%;
+    margin-left: 10px;
+}
+.table-sec tbody tr {
+    display: inline-block;
+}
+
+.boxspace4{
+    font-size: 30px;
+}
+
+.boxspace1{
+    font-size: 20px;
+}
+
+.tota_test_heading {
+    margin-top: 15%;
+    margin-left: 20px;
+    font-size: 20px;
+}
+
+.total_test_heading h2 {
+    margin-left: 25px;
+}
+
+.today_test_heading #today_test_heading1 {
+    margin-left: 25px;
+}

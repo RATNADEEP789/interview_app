@@ -1,0 +1,77 @@
+html{
+    background-color: black;
+    
+}
+
+h3{
+    color: white;
+    text-align: center;
+    font-size: 1.8rem;
+
+}
+
+.instruction{
+  
+color: white;
+align-items: center;
+margin-top: 50px;
+line-height: 50px;
+word-wrap: break-word;
+list-style-type: decimal;
+font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+
+}
+.instruction ol li{
+    width: 100%;
+    color:white;
+    font-size: 15px;
+    
+    
+}
+.instruction h1{
+    font-size: 45px;
+    color: #c1ff11; 
+}
+
+
+.container{
+    /* width: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-30%,-50%);
+  */
+  /* width: 100%; */
+display: flex;
+justify-content: center;
+}
+
+.button{
+    text-align: center;
+    /* width: 300px; */
+    margin-top: 50px;
+
+}
+.button a{
+    color: rgb(11, 11, 11);
+    margin-top: 20px;
+    padding: 10px 18px;
+    text-align: center;
+    background-color: #C1FF11;
+    border: none;
+    /* width: 100px; */
+    margin-bottom: 30px;
+    border-radius: 8px;
+    font-size: 19px;
+    font-weight: bold;
+    text-decoration: none;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+
+@media (max-width:600px){
+    .instruction{
+        margin: 0px 20px 0px 20px;
+    }
+}

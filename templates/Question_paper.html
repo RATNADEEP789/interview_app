@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qustion page</title>
+    <!-- <style>
+        .unselectable {
+            user-select: none
+        }
+    </style> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <link rel="stylesheet" href="static/css/Question_paper.css">
+</head>
+
+<body>
+    <form action="finalresult" method="POST">
+        {% csrf_token %}
+        <input type="hidden" value="{{QuestionsMaster|length }}" name="total_questions">
+        {% for row in QuestionsMaster %}
+        <div class="center">
+            <div class="mySlides" style="width:400px">
+                <!-- {% comment %} <h1>{{row.2}}</h1> {% endcomment %} -->
+                <div class="block2">
+                    <h1><span>{{ forloop.counter }}.</span> {{row.2}}</h1>{# Serial number for the question #}
+                    <!-- <h1> {{ forloop.counter }}</h1> {# Serial number for the question #} -->
+                    <label class="container"><img src="static/img/icons8-a-67.png" alt="" width="30px"><span>{{ row.3.0}}</span>
+                        <input type="radio" id="radio1" name="question{{ forloop.counter }}"value="{{ row.3.0 }}" >
+                        <span class="checkmark"></span>
+                    </label>
+
+                    <label class="container"><img src="static/img/icons8-b-67.png" alt="" width="30px"><span>{{ row.3.1}}</span>
+                        <input type="radio" id="radio1" name="question{{ forloop.counter }}"value="{{ row.3.1 }}">
+                        <span class="checkmark"></span>
+                    </label>
+
+                    <label class="container"><img src="static/img/icons8-c-67.png" alt="" width="30px"><span>{{ row.3.2}}</span>
+                        <input type="radio" id="radio1" name="question{{ forloop.counter }}"value="{{ row.3.2 }}">
+                        <span class="checkmark"></span>
+                    </label>   
+                     
+                    <label class="container"><img src="static/img/icons8-d-67.png" alt="" width="30px"><span>{{ row.3.3}}</span>
+                        <input type="radio" id="radio1" name="question{{ forloop.counter }}"value="{{ row.3.3 }}" >
+                        <span class="checkmark"></span>
+                    </label>
+
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+            
+           <!-- <div><button><a href="finalresult"style="background-color:red;color:white">submit</a></button></div>   --> 
+            <center>
+                <div class="submit_btn"><button type="">Submit</button></div>
+            </center>
+        </div>
+        </div>
+    </form>
+    </div>
+    <script>
+        // Form label Js
+        $('label').click(function () {
+            $(this).addClass('activelbl');
+        });
+        $('form').on('click', 'label', function () {
+            // Remove "activelbl" class from all labels except the current one
+            $(this).siblings().removeClass('activelbl');
+            // Add "activelbl" class to the current label
+            $(this).addClass('activelbl');
+        });
+    </script>
+    <!-- <script>
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+        });
+
+        document.addEventListener('dragstart', function(e) {
+            e.preventDefault();
+        });
+    </script> -->
+
+</body>
+
+</html>

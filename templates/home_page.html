@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+
+    {% comment %} {% load static %} {% endcomment %}
+
+    <link rel="stylesheet" href="static/css/home.css">
+</head>
+
+<body>
+    {% comment %} {% csrf_token %} {% endcomment %}
+    <div class="bg"></div>
+    <div class="nav">
+<!-- 
+        <img class="logo" src="static/img/Kavin Logo.png" alt="" width="280px"> -->
+        <a href="login2">Sign In</a>
+    </div>
+    <div class="center-container">
+        <div class="anusLogo1">
+            <img src="../static/img/homelogo.png" alt="">
+        </div>
+    </div>
+    <section>
+        <p class="firstText">Assess candidates with confidence</p>
+    </section>
+
+    <section>
+        <p class="thirdText">
+            Don't waste any more time on unreliable assessments. Start your test <br>Today and see the difference it can
+            make in your hiring process.</p>
+    </section>
+    <section>
+        
+        <div class="button"><a href="regspage"><button>Sign Up</button></a></div>
+
+    </section>
+    <section>
+        <p class="thirdText">Sign In now and take the first step towards a stronger workforce</p>
+        <!-- <div class="footer"><a href="https://www.kavintech.com/"> Powered by Kavintech Corproation </a></div> -->
+    </section>
+
+    <section>
+
+        </div>
+    </section>
+
+    </div>
+    <section>
+        <div class="last"></div>
+        {% comment %} {%load static%} {% endcomment %}
+        <!-- <div class="image"> <img class="lastimage" src="static/img/undraw_note_list_re_r4u9 1.png" alt="" width=""> -->
+
+          
+    </section>
+</body>
+<script>
+    const modal = document.querySelector(".modal");
+    const trigger = document.querySelector(".trigger");
+    const closeButton = document.querySelector(".close-button");
+
+    function toggleModal() {
+        modal.classList.toggle("show-modal");
+    }
+
+    function windowOnClick(event) {
+        if (event.target === modal) {
+            toggleModal();
+        }
+    }
+    trigger.addEventListener("click", toggleModal);
+    closeButton.addEventListener("click", toggleModal);
+    window.addEventListener("click", windowOnClick);
+</script>
+
+</html>

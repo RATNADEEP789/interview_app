@@ -1,0 +1,168 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.head h1{
+    text-align: center;
+    color: #fff;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.main{
+    width: 100%;
+    height: 110px;
+    background-color: #161616;
+    padding: 20px 0px 0px 0px;
+}
+.Question a{
+    text-decoration: none;
+    background-color: #C1FF11;
+    color: #000;
+    padding: 7px;
+    font-size: 16px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  
+}
+
+.Question{
+    margin: 10px 0px 20px 20px;
+
+}
+
+table{
+    /* border-collapse: collapse; */
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif ;
+}
+
+table tr th{
+    padding: 5px;
+    background-color: #000;
+    color: #fff;
+    /* border: 2px solid #000; */
+    font-size: 16px;
+    border-radius: 0.3rem;
+}
+
+table tr td{
+    padding: 7px;
+    /* border: 2px solid #000; */
+    text-align: center;
+    background: #dfffcd;
+}
+
+table tr td a{
+    text-transform: capitalize;
+    color: #2fc910;
+    padding: 8px;
+    text-decoration: none;
+
+}
+
+button.btn-error{
+    border: 0;
+    background: none;
+    padding: 10px 10px;
+    color: red;
+    text-decoration: underline;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+button.btn-green{
+    border: 0;
+    /* background: rgb(64 220 0); */
+    padding: 10px 10px;
+    background: #dfffcd;
+}
+table.table-width
+{
+    width: 100%;
+}
+
+div .btn-admin
+{
+    background-color: #C1FF11;
+    color: rgb(255 255 255);
+    padding: 10px 20px;
+    text-decoration: none;
+    border: none;
+    float: right;
+    margin-right: 20px;
+    float: right;
+    margin-right: 20px;
+    font-weight: bold;
+}
+div .btn-ques
+{
+    background-color: #C1FF11;
+    color: rgb(255 255 255);
+    padding: 10px 20px;
+    text-decoration: none;
+    border: none;
+    font-weight: bold;
+}
+
+ul#pagination {
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+ul#pagination li {
+    display: inline-block;
+    margin-right: 10px;
+}
+ul#pagination li a.page-link.prev {
+    text-decoration: none;
+    background: #C1FF11;
+    padding: 10px 15px;
+    color: #000;
+    font-weight: bold;
+}
+ul#pagination li a.page-link {
+    color: #000;
+    text-decoration: none;
+    background: #fff;
+    border: 1px solid #323232;
+    padding : 1px 1px;
+    font-size: 17px;
+}
+ul#pagination li span.current {
+    font-weight: bold;
+}
+ul#pagination li span.current.next {
+    text-decoration: none;
+    background: #C1FF11;
+    padding: 10px 15px;
+    color: #000;
+    font-weight: bold;
+}
+
+table#questionsTable tbody tr td {
+    white-space: normal;
+    border-radius: 0.3rem;
+}
+
+h2#result1 {
+    color: #C1FF11;
+    font-size: 30px;
+}
+
+.search-bar {
+    margin-bottom: 10px;
+    text-align: right;
+}
+
+#searchInput {
+    padding: 5px;
+    border: 1px solid #ccc;
+}
+
+#searchButton {
+    padding: 5px 10px;
+    background-color: #000;
+    color: #c1ff11;
+    border: none;
+    cursor: pointer;
+    margin-top: 13px;
+}

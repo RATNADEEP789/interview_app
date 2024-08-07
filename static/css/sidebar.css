@@ -1,0 +1,455 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&family=Playfair+Display:wght@600&display=swap');
+
+        body {
+            margin: 0;
+     font-family: 'Open Sans', sans-serif;
+           
+        }
+
+        .sidebar {
+            margin: 0;
+            padding: 0;
+            width: 250px;
+            background-color: #ffffff;
+            position: fixed;
+            height: 100%;
+            box-shadow: 3px 4px 5px 3px rgba(229, 192, 192, 0.336);
+            /* overflow: auto; */
+        }
+
+
+        .sideBartopImg {
+            width: 250px;
+        }
+        .anusLogo img{
+            /* height: 70px; */
+            width: 226px;
+            padding: 33px 10px;
+        }
+
+        .sideBartopImg img {
+            width: 100%;
+            height: 60px;
+        }
+
+        div.content {
+            margin-left: 250px;
+            padding: 1px 16px;
+        
+        }
+
+        /* topBar */
+
+        .topBar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 60px;
+            background-color: #000;
+            padding: 19px;
+            box-shadow: 0px 5px 5px 0px rgba(153, 131, 131, 0.39);
+        }
+
+
+        /* dashBoard  */
+
+        .dashBoard {
+            display:flex;
+            flex-direction: column;
+            row-gap: 20px;
+            margin-top: 40px;
+
+        }
+
+        .dashBoard .humburger{
+            text-align: right;
+        }
+
+   
+
+       .dashBoard .dasgbtn:hover{
+    background-color: rgba(240, 227, 227, 0.452);
+    /* box-shadow:0px 5px 5px 0px rgba(104, 92, 92, 0.562); */
+    border-radius: 5px;
+    color: rgb(85, 58, 7);
+       } 
+      
+/* RegDetails */
+
+
+.dashBoard .RegDetails:hover{
+    background-color: rgba(240, 227, 227, 0.452);
+    border-radius: 5px;
+    color: #a5dc86;
+   
+       } 
+
+     /* Report */
+
+     .Report{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: black;
+    padding: 10px;
+    column-gap: 10px;
+    }
+
+     .Report img{
+      width: 30px;
+     }
+
+.ReportSubMenus{
+   display: flex;
+   flex-direction: column;
+   margin-top: -15px;
+   row-gap: 10px;
+   margin-left: 35px;
+}
+.ReportSubMenus a:hover{
+    background-color: rgba(240, 227, 227, 0.452);
+    /* box-shadow:0px 5px 5px 0px rgba(104, 92, 92, 0.562); */
+    border-radius: 5px;
+    color: #a5dc86;
+
+}
+
+        .dropbtn {
+            background-color: #ffffff;
+            color: white;
+            padding: 5px 5px 5px 5px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            margin-right: 30px;
+            color: orange;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            right: 30px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            font-size: 14px;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f1
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown:hover .dropbtn {
+            background-color: #ffffff;
+        }
+
+    .progressbox{
+     padding: 10px 0px 10px 0px;
+     margin-top: 30px;
+     line-height: 50px;
+     display: flex;
+     justify-content:space-around;
+     background-color: white;
+     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+     border-radius: 10px;
+     width:95%;
+     margin-left: 30px;
+ }
+
+ .tebline{
+     border-width: 0px 0px 0px 2px black;
+     border: 1px dotted;
+ }
+
+
+        @media (max-width: 700px) {
+            .sidebar {
+                /* display: none; */
+                width:100%;
+                height:auto;
+                position:relative;
+                
+            }
+            .anusLogo {
+             text-align: center;
+            }
+    
+            .sidebar a {
+                float: left;
+            }
+
+            div.content {
+                margin-left: 0;
+            }
+            .sideBartopImg {
+                width:100%;
+            }
+            .progressbox{
+               margin-left:0px;
+            }
+     
+        }
+
+        @media screen and (max-width: 400px) {
+           
+
+            #result{
+                font-size: 16px;
+            }
+            .topBar {
+           padding: 5px;
+        }
+
+        }
+
+
+        @media(max-width:992px){
+            .progressbox{
+                display: flex;
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        .anusLogo {
+            background: #000;
+        }
+
+        .content li a {
+            color: #C1FF11;
+            font-size: 20px;
+            padding: 3px;
+            text-decoration: none;
+        }
+
+        .ReportSubMenus .ApprovedUSer:hover {
+  
+            background-color: rgba(240, 227, 227, 0.452);
+            box-shadow:0px 5px 5px 0px rgba(104, 92, 92, 0.562);
+            border-radius: 5px;
+            color: #a5dc86;
+           } 
+
+           .dashBoard .dasgbtn:hover {
+  
+            background-color: rgba(240, 227, 227, 0.452);
+            /* box-shadow:0px 5px 5px 0px rgba(104, 92, 92, 0.562); */
+            border-radius: 5px;
+            color: #a5dc86;
+           } 
+
+           .dashBoard .RegDetails:hover{
+            background-color: rgba(240, 227, 227, 0.452);
+            /* box-shadow:0px 5px 5px 0px rgba(104, 92, 92, 0.562); */
+            border-radius: 5px;
+            color: #a5dc86;
+           
+               } 
+
+               .dashBoard .Registerdetails:hover {
+  
+                background-color: rgba(240, 227, 227, 0.452);
+                /* box-shadow:0px 5px 5px 0px rgba(104, 92, 92, 0.562); */
+                border-radius: 5px;
+                color: #a5dc86;
+               } 
+
+               .dashBoard .Userresult:hover {
+                background-color: rgba(240, 227, 227, 0.452);
+                /* box-shadow: 0px 5px 5px 0px rgba(104, 92, 92, 0.562); */
+                border-radius: 5px;
+                color: #a5dc86;
+            }
+
+            .dashBoard .Addquestions:hover {
+                background-color: rgba(240, 227, 227, 0.452);
+                /* box-shadow: 0px 5px 5px 0px rgba(104, 92, 92, 0.562); */
+                border-radius: 5px;
+                color: #a5dc86;
+            }
+
+            .dashBoard.showregisteruser {
+                display: flex;
+                align-items: center;
+                text-decoration: none;
+                color: black;
+                padding: 15px;
+                column-gap: 20px;
+                font-size: 14px;
+                /* margin: auto; */
+            }
+
+            .dashBoard.userresult {
+                display: flex;
+                align-items: center;
+                text-decoration: none;
+                color: black;
+                padding: 15px;
+                column-gap: 20px;
+                font-size: 14px;
+                /* margin: auto; */
+            }
+
+            .dashBoard.adddata {
+                display: flex;
+                align-items: center;
+                text-decoration: none;
+                color: black;
+                padding: 15px;
+                column-gap: 20px;
+                font-size: 14px;
+                /* margin: auto; */
+            }
+
+              .dashBoard .dashBoard1 {
+                display: flex;
+                align-items: center;
+                text-decoration: none;
+                color: black;
+                padding: 15px;
+                column-gap: 20px;
+                font-size: 14px;
+                /* margin: auto; */
+            }
+
+           
+            .dashBoard .index {
+                display: flex;
+                align-items: center;
+                text-decoration: none;
+                color: black;
+                padding: 15px;
+                column-gap: 20px;
+                font-size: 14px;
+               
+            }
+
+            .index img {
+                width: 20px;
+            }
+
+            .dashBoard1 img {
+                width: 20px;
+            }
+
+            .dashBoard .registeruser {
+                display: flex;
+                align-items: center;
+                text-decoration: none;
+                color: black;
+                padding: 15px;
+                column-gap: 20px;
+                font-size: 14px;
+                /* margin: auto; */
+            }
+
+            .registeruser img {
+                width: 20px;
+            }
+
+            .dashBoard .userresult {
+                display: flex;
+                align-items: center;
+                text-decoration: none;
+                color: black;
+                padding: 15px;
+                column-gap: 20px;
+                font-size: 14px;
+                /* margin: auto; */
+            }
+
+            .userresult img {
+                width: 20px;
+            }
+
+            .dashBoard .questionsmaster {
+                display: flex;
+                align-items: center;
+                text-decoration: none;
+                color: black;
+                padding: 15px;
+                column-gap: 20px;
+                font-size: 14px;
+                /* margin: auto; */
+            }
+
+            .questionsmaster img {
+                width: 20px;
+            }
+
+            
+            .dashBoard .update {
+                display: flex;
+                align-items: center;
+                text-decoration: none;
+                color: black;
+                padding: 15px;
+                column-gap: 20px;
+                font-size: 14px;
+                /* margin: auto; */
+            }
+
+            .update img {
+                width: 20px;
+            } img {
+                width: 20px;
+            }
+            .dashBoard .questionsmaster:hover {
+                background-color: rgba(240, 227, 227, 0.452);
+                /* box-shadow: 0px 5px 5px 0px rgba(104, 92, 92, 0.562); */
+                border-radius: 5px;
+                color: #a5dc86;
+            }
+
+            .dashBoard .userresult:hover {
+                background-color: rgba(240, 227, 227, 0.452);
+                /* box-shadow: 0px 5px 5px 0px rgba(104, 92, 92, 0.562); */
+                border-radius: 5px;
+                color: #a5dc86;
+            }
+
+            .dashBoard .index:hover {
+                background-color: rgba(240, 227, 227, 0.452);
+                /* box-shadow: 0px 5px 5px 0px rgba(104, 92, 92, 0.562); */
+                border-radius: 5px;
+                color: #a5dc86;
+            }
+
+            .dashBoard .dashBoard1:hover {
+                background-color: rgba(240, 227, 227, 0.452);
+                /* box-shadow: 0px 5px 5px 0px rgba(104, 92, 92, 0.562); */
+                border-radius: 5px;
+                color: #a5dc86;
+            }
+
+            
+            .dashBoard .registeruser:hover {
+                background-color: rgba(240, 227, 227, 0.452);
+                /* box-shadow: 0px 5px 5px 0px rgba(104, 92, 92, 0.562); */
+                border-radius: 5px;
+                color: #a5dc86;
+            }
+
+            .dashBoard .update:hover {
+                background-color: rgba(240, 227, 227, 0.452);
+                /* box-shadow: 0px 5px 5px 0px rgba(104, 92, 92, 0.562); */
+                border-radius: 5px;
+                color: #a5dc86;
+            }

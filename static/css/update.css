@@ -1,0 +1,108 @@
+/* update.css */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+  }
+  
+  h1 {
+    color: #000;
+    text-align: center;
+  }
+  
+  form {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 50px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    box-shadow: 10px 0px 20px #ccc;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  input[type="text"] {
+    display: block;
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+  }
+  
+  input[type="submit"] {
+    background-color: #008080;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  input[type="submit"]:hover {
+    background-color: #005555;
+  }
+  
+  input[type="submit"]:focus {
+    outline: none;
+  }
+
+  /*Questionare page*/
+  .ques-page header
+  {
+    width: 100%;
+    height: 90px;
+    /* background-color: #161616; */
+    padding: 20px 0px 0px 0px;
+  }
+  .ques-page header h1
+  {
+    color: #000;
+  }
+  .ques-page .ques-from form
+  {
+    margin-top: 60px;
+  }
+  .ques-page .ques-from form input
+  {
+    width: 100%;
+    padding: 10px 0;
+    text-transform: capitalize;
+  }
+
+  button.submit-btn
+  {
+    background-color: #000;
+    padding: 10px 20px;
+    color: #fff;
+    font-weight: bold;
+    border: none;
+  }
+
+.ques-page  .admin-update{
+    float: right;
+    margin-top: -30px;
+    margin-right: 20px;
+  }
+  
+  .ques-page  .admin-update a
+  {
+    text-decoration: none;
+    background-color: #C1FF11;
+    color:#000;
+    padding: 10px 15px;
+    font-size: 16px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  }
+
+  
+h2#result1 {
+  color: #C1FF11;
+  font-size: 25px;
+}
+
+ 
